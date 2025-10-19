@@ -5,24 +5,28 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "traffic_info")
-public class TrafficInfo {
+@Table(name = "weather_info")
+public class WeatherInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "location_id",nullable = false,foreignKey=@ForeignKey(name = "fk_trafficinfo_locationid"))
+    @JoinColumn(name = "location_id",nullable = false,foreignKey = @ForeignKey(name = "fk_weatherinfo_locationid"))
     private Location location;
 
-    @Column(name = "traffic_level")
-    private String trafficLevel;
+    @Column(name = "temperature")
+    private Double temperature;
+
+    @Column(name = "condition")
+    private String condition;
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
     //Getters and Setters
+
 
     public Long getId() {
         return id;
@@ -40,12 +44,20 @@ public class TrafficInfo {
         this.location = location;
     }
 
-    public String getTrafficLevel() {
-        return trafficLevel;
+    public Double getTemperature() {
+        return temperature;
     }
 
-    public void setTrafficLevel(String trafficLevel) {
-        this.trafficLevel = trafficLevel;
+    public void setTemperature(Double temperature) {
+        this.temperature = temperature;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 
     public LocalDateTime getUpdatedAt() {
