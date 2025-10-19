@@ -3,11 +3,6 @@ package com.example.SmartTravel.DTO;
 import java.time.LocalDateTime;
 
 public class TrafficInfoDTO {
-
-    //id SERIAL PRIMARY KEY,
-    //    location_id INT REFERENCES locations(id),
-    //    traffic_level VARCHAR(50), -- 'LOW', 'MEDIUM', 'HIGH'
-    //    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     private Long id;
     private Long location;
     private String trafficLevel;

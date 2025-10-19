@@ -7,11 +7,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "traffic_info")
 public class TrafficInfo {
-    //id SERIAL PRIMARY KEY,
-    //    location_id INT REFERENCES locations(id),
-    //    traffic_level VARCHAR(50), -- 'LOW', 'MEDIUM', 'HIGH'
-    //    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
